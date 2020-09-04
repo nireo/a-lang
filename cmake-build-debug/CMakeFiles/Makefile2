@@ -94,12 +94,12 @@ clean: CMakeFiles/alang.dir/clean
 CMakeFiles/alang.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/alang.dir/build.make CMakeFiles/alang.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/alang.dir/build.make CMakeFiles/alang.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target alang"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target alang"
 .PHONY : CMakeFiles/alang.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/alang.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/alang.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/alang.dir/rule

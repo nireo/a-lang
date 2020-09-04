@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/eemil/CLionProjects/alang/helpers.cpp">
+			<Option target="alang"/>
+		</Unit>
+		<Unit filename="/home/eemil/CLionProjects/alang/helpers.hpp">
+			<Option target="alang"/>
+		</Unit>
 		<Unit filename="/home/eemil/CLionProjects/alang/main.cpp">
 			<Option target="alang"/>
 		</Unit>
