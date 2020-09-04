@@ -6,9 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/home/eemil/CLionProjects/alang/helpers.cpp
+array
+-
+string
+-
+
 /home/eemil/CLionProjects/alang/helpers.hpp
+array
+-
+string
+-
 
 /home/eemil/CLionProjects/alang/main.cpp
+ctype.h
+-
+array
+-
 iostream
 -
 map
