@@ -1,16 +1,54 @@
-#include <ctype.h>
-
 #include <array>
 #include <iostream>
 #include <map>
+#include <sstream>
 #include <vector>
+#include <iterator>
 
 #include "helpers.hpp"
 
+
+// mahdollinen parser class tulevaisuutta varten
+class Parser {
+public:
+    void assignVariable(const std::vector<std::string>& tokens);
+    static std::vector<std::string> tokenizer(const std::string& input, char deliminator);
+private:
+    std::map<std::string, int> variables;
+};
+
+void Parser::assignVariable(const std::vector<std::string> &tokens) {
+    if (tokens[1][0] != '=') {
+        std::cout << "Values need to assigned using the '=' operation. Skipping..." << "\n";
+        return;
+    }
+
+    int variableValue;
+    try {
+        variableValue = std::stoi(tokens[2]);
+    } catch (const std::invalid_argument&) {
+        std::cout << "Variable values can only be numbers. Skipping..." << "\n";
+        return;
+    }
+
+    variables.insert(std::pair<std::string, int>(tokens[0], variableValue));
+    std::cout << "Variable " << tokens[0] << " initialized as " << variableValue << "!";
+}
+
+std::vector<std::string> Parser::tokenizer(const std::string &input, char deliminator) {
+    std::vector<std::string> tokens;
+    std::stringstream s_stream(input);
+    std::string temp;
+
+    while( getline(s_stream, temp, deliminator)) {
+        tokens.push_back(temp);
+    }
+
+    return tokens;
+}
+
 int main() {
     std::string input;
-    std::map<std::string, int> variables;
-
     for (;;) {
         std::cin >> input;
         if (input == ".exit") {
@@ -53,6 +91,7 @@ int main() {
                     value += values[i - 1] % values[i];
                 }
             }
+
             std::cout << value << "\n";
         }
     }

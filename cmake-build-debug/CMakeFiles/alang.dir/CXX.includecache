@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/eemil/CLionProjects/alang/helpers.cpp
-array
--
-string
--
-
 /home/eemil/CLionProjects/alang/helpers.hpp
 array
 -
@@ -23,11 +17,17 @@ ctype.h
 -
 array
 -
+cstdio
+-
 iostream
 -
 map
 -
+sstream
+-
 vector
+-
+iterator
 -
 helpers.hpp
 /home/eemil/CLionProjects/alang/helpers.hpp
