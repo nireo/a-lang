@@ -13,11 +13,7 @@ string
 -
 
 /home/eemil/CLionProjects/alang/main.cpp
-ctype.h
--
 array
--
-cstdio
 -
 iostream
 -
@@ -25,9 +21,13 @@ map
 -
 sstream
 -
-vector
+stdexcept
 -
-iterator
+string
+-
+tuple
+-
+vector
 -
 helpers.hpp
 /home/eemil/CLionProjects/alang/helpers.hpp

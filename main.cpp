@@ -1,25 +1,28 @@
 #include <array>
 #include <iostream>
 #include <map>
-#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <tuple>
 #include <vector>
-#include <iterator>
 
-#include "helpers.hpp"
-
-
-// mahdollinen parser class tulevaisuutta varten
 class Parser {
-public:
+   public:
     void assignVariable(const std::vector<std::string>& tokens);
-    static std::vector<std::string> tokenizer(const std::string& input, char deliminator);
-private:
+
+    static void calculate(std::string& input);
+    static std::tuple<int, bool> parseValue(const std::string& stringNumber);
+    static std::vector<std::string> tokenizer(std::string& input);
+
+   private:
     std::map<std::string, int> variables;
 };
 
-void Parser::assignVariable(const std::vector<std::string> &tokens) {
+void Parser::assignVariable(const std::vector<std::string>& tokens) {
     if (tokens[1][0] != '=') {
-        std::cout << "Values need to assigned using the '=' operation. Skipping..." << "\n";
+        std::cout
+            << "Values need to assigned using the '=' operation. Skipping..."
+            << "\n";
         return;
     }
 
@@ -27,21 +30,68 @@ void Parser::assignVariable(const std::vector<std::string> &tokens) {
     try {
         variableValue = std::stoi(tokens[2]);
     } catch (const std::invalid_argument&) {
-        std::cout << "Variable values can only be numbers. Skipping..." << "\n";
+        std::cout << "Variable values can only be numbers. Skipping..."
+                  << "\n";
         return;
     }
 
     variables.insert(std::pair<std::string, int>(tokens[0], variableValue));
-    std::cout << "Variable " << tokens[0] << " initialized as " << variableValue << "!";
+    std::cout << "Variable " << tokens[0] << " initialized as " << variableValue
+              << "!";
 }
 
-std::vector<std::string> Parser::tokenizer(const std::string &input, char deliminator) {
-    std::vector<std::string> tokens;
-    std::stringstream s_stream(input);
-    std::string temp;
+std::tuple<int, bool> Parser::parseValue(const std::string& stringNumber) {
+    int number = 0;
+    try {
+        number = std::stoi(stringNumber);
+        return std::make_tuple(number, true);
+    } catch (const std::invalid_argument&) {
+        return std::make_tuple(0, false);
+    }
+}
 
-    while( getline(s_stream, temp, deliminator)) {
-        tokens.push_back(temp);
+void Parser::calculate(std::string& input) {
+    std::vector<std::string> tokens = tokenizer(input);
+    std::vector<int> values;
+    std::vector<char> operators;
+
+    for (const auto& token : tokens) {
+        std::tuple<int, bool> parsedValue = parseValue(token);
+        if (std::get<1>(parsedValue)) {
+            values.push_back(std::get<0>(parsedValue));
+        } else {
+            operators.push_back(token[0]);
+        }
+    }
+
+    int value = 0;
+    for (auto i = 1; i < values.size(); ++i) {
+        char o = operators[i - 1];
+        if (o == '+')
+            value += values[i - 1] + values[i];
+        else if (o == '-')
+            value += values[i - 1] - values[i];
+        else if (o == '*')
+            value += values[i - 1] * values[i];
+        else if (o == '/')
+            value += values[i - 1] / values[i];
+        else if (o == '%')
+            value += values[i - 1] % values[i];
+    }
+
+    std::cout << value << "\n";
+}
+
+std::vector<std::string> Parser::tokenizer(std::string& input) {
+    std::vector<std::string> tokens;
+    std::string delimiter = " ";
+
+    size_t pos = 0;
+    std::string token;
+    while ((pos = input.find(delimiter)) != std::string::npos) {
+        token = input.substr(0, pos);
+        tokens.push_back(token);
+        input.erase(0, pos + delimiter.length());
     }
 
     return tokens;
@@ -49,50 +99,14 @@ std::vector<std::string> Parser::tokenizer(const std::string &input, char delimi
 
 int main() {
     std::string input;
+    Parser parser;
     for (;;) {
-        std::cin >> input;
+        std::getline(std::cin, input);
         if (input == ".exit") {
             break;
         } else {
-            std::vector<int> values;
-            std::vector<char> operators;
-            for (auto i = 0; i < input.size(); i++) {
-                if (isNumber(input[i])) {
-                    std::array<int, 2> valueAndIndex = parseValue(input, i);
-                    i = valueAndIndex[1];
-
-                    values.push_back(valueAndIndex[0]);
-                } else if (isOperator(input[i])) {
-                    operators.push_back(input[i]);
-                } else if (input[i] == ' ') {
-                    continue;
-                } else {
-                    // TODO: lisää muuttijat
-                    std::string name = "";
-                    int j;
-                    for (j = i; isValidNameChar(input[j]); j++) {
-                        name.push_back(input[j]);
-                    }
-                }
-            }
-
-            int value = 0;
-            for (auto i = 1; i < values.size(); ++i) {
-                char o = operators[i - 1];
-                if (o == '+') {
-                    value += values[i - 1] + values[i];
-                } else if (o == '-') {
-                    value += values[i - 1] - values[i];
-                } else if (o == '*') {
-                    value += values[i - 1] * values[i];
-                } else if (o == '/') {
-                    value += values[i - 1] / values[i];
-                } else if (o == '%') {
-                    value += values[i - 1] % values[i];
-                }
-            }
-
-            std::cout << value << "\n";
+            input += " t";
+            parser.calculate(input);
         }
     }
 }
