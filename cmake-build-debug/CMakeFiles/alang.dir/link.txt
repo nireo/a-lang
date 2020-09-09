@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/alang.dir/main.cpp.o CMakeFiles/alang.dir/helpers.cpp.o  -o alang 
+/usr/bin/c++  -g   CMakeFiles/alang.dir/main.cpp.o CMakeFiles/alang.dir/helpers.cpp.o CMakeFiles/alang.dir/parser.cpp.o  -o alang 

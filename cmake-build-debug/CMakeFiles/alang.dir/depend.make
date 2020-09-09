@@ -3,6 +3,9 @@
 
 CMakeFiles/alang.dir/helpers.cpp.o: ../helpers.cpp
 
-CMakeFiles/alang.dir/main.cpp.o: ../helpers.hpp
 CMakeFiles/alang.dir/main.cpp.o: ../main.cpp
+CMakeFiles/alang.dir/main.cpp.o: ../parser.hpp
+
+CMakeFiles/alang.dir/parser.cpp.o: ../parser.cpp
+CMakeFiles/alang.dir/parser.cpp.o: ../parser.hpp
 

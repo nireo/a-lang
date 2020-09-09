@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/alang.dir/helpers.cpp.o"
   "CMakeFiles/alang.dir/main.cpp.o"
+  "CMakeFiles/alang.dir/parser.cpp.o"
   "alang"
   "alang.pdb"
 )

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/eemil/CLionProjects/alang/helpers.cpp" "/home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles/alang.dir/helpers.cpp.o"
   "/home/eemil/CLionProjects/alang/main.cpp" "/home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles/alang.dir/main.cpp.o"
+  "/home/eemil/CLionProjects/alang/parser.cpp" "/home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles/alang.dir/parser.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
