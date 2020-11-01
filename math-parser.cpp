@@ -1,8 +1,11 @@
 #include <iostream>
 #include <sstream>
 #include <stack>
+#include <vector>
+#include <cmath>
+#include "math-parser.hpp"
 
-std::string InfixToPostfix(const std::string& infix) {
+void MathParser::InfixToPostfix(const std::string& infix) {
     const std::string ops = "-+/*^";
     std::stringstream ss;
     std::stack<int> s;
@@ -17,7 +20,6 @@ std::string InfixToPostfix(const std::string& infix) {
         char c = token[0];
         size_t idx = ops.find(c);
 
-        // check for operator
         if (idx != std::string::npos) {
             while (!s.empty()) {
                 int prec2 = s.top() / 2;
@@ -46,11 +48,48 @@ std::string InfixToPostfix(const std::string& infix) {
         s.pop();
     }
 
-    return ss.str();
+    postfix = ss.str();
+}
+
+double MathParser::CalculatePostfix() {
+    std::istringstream iss(postfix);
+    std::vector<double> stack;
+    std::string token;
+
+    while (iss >> token) {
+        double tokenN;
+        if (std::istringstream(token) >> tokenN)
+            stack.push_back(tokenN);
+        else {
+            double secondOperand = stack.back();
+            stack.pop_back();
+            double firstOperand = stack.back();
+            stack.pop_back();
+            if (token == "*")
+                stack.push_back(firstOperand * secondOperand);
+            else if (token == "/")
+                stack.push_back(firstOperand / secondOperand);
+            else if (token == "-")
+                stack.push_back(firstOperand - secondOperand);
+            else if (token == "+")
+                stack.push_back(firstOperand + secondOperand);
+            else if (token == "^")
+                stack.push_back(std::pow(firstOperand, secondOperand));
+            else {
+                std::cerr << "Error" << std::endl;
+                std::exit(1);
+            }
+        }
+        std::cout << std::endl;
+    }
+
+    return stack.back();
 }
 
 int main() {
-    std::string infix = "3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3";
-    std::cout << "infix:   " << infix << '\n';
-    std::cout << "postfix: " << infixToPostfix(infix) << '\n';
+    std::string infix = "3 + 5 + ( 2 * 3 )";
+    MathParser mp;
+    mp.InfixToPostfix(infix);
+
+    std::cout << mp.CalculatePostfix() << "\n";
 }
