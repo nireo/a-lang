@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/eemil/downloads/clion-2020.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/eemil/net/clion-2020.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/eemil/downloads/clion-2020.2/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/eemil/net/clion-2020.2/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eemil/CLionProjects/alang
+CMAKE_SOURCE_DIR = /home/eemil/projects/CLionProjects/alang
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eemil/CLionProjects/alang/cmake-build-debug
+CMAKE_BINARY_DIR = /home/eemil/projects/CLionProjects/alang/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/alang.dir/depend.make
@@ -79,42 +79,42 @@ include CMakeFiles/alang.dir/flags.make
 
 CMakeFiles/alang.dir/main.cpp.o: CMakeFiles/alang.dir/flags.make
 CMakeFiles/alang.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/alang.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alang.dir/main.cpp.o -c /home/eemil/CLionProjects/alang/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eemil/projects/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/alang.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alang.dir/main.cpp.o -c /home/eemil/projects/CLionProjects/alang/main.cpp
 
 CMakeFiles/alang.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/alang.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eemil/CLionProjects/alang/main.cpp > CMakeFiles/alang.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eemil/projects/CLionProjects/alang/main.cpp > CMakeFiles/alang.dir/main.cpp.i
 
 CMakeFiles/alang.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/alang.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eemil/CLionProjects/alang/main.cpp -o CMakeFiles/alang.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eemil/projects/CLionProjects/alang/main.cpp -o CMakeFiles/alang.dir/main.cpp.s
 
 CMakeFiles/alang.dir/helpers.cpp.o: CMakeFiles/alang.dir/flags.make
 CMakeFiles/alang.dir/helpers.cpp.o: ../helpers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/alang.dir/helpers.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alang.dir/helpers.cpp.o -c /home/eemil/CLionProjects/alang/helpers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eemil/projects/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/alang.dir/helpers.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alang.dir/helpers.cpp.o -c /home/eemil/projects/CLionProjects/alang/helpers.cpp
 
 CMakeFiles/alang.dir/helpers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/alang.dir/helpers.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eemil/CLionProjects/alang/helpers.cpp > CMakeFiles/alang.dir/helpers.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eemil/projects/CLionProjects/alang/helpers.cpp > CMakeFiles/alang.dir/helpers.cpp.i
 
 CMakeFiles/alang.dir/helpers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/alang.dir/helpers.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eemil/CLionProjects/alang/helpers.cpp -o CMakeFiles/alang.dir/helpers.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eemil/projects/CLionProjects/alang/helpers.cpp -o CMakeFiles/alang.dir/helpers.cpp.s
 
 CMakeFiles/alang.dir/parser.cpp.o: CMakeFiles/alang.dir/flags.make
 CMakeFiles/alang.dir/parser.cpp.o: ../parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/alang.dir/parser.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alang.dir/parser.cpp.o -c /home/eemil/CLionProjects/alang/parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eemil/projects/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/alang.dir/parser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alang.dir/parser.cpp.o -c /home/eemil/projects/CLionProjects/alang/parser.cpp
 
 CMakeFiles/alang.dir/parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/alang.dir/parser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eemil/CLionProjects/alang/parser.cpp > CMakeFiles/alang.dir/parser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eemil/projects/CLionProjects/alang/parser.cpp > CMakeFiles/alang.dir/parser.cpp.i
 
 CMakeFiles/alang.dir/parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/alang.dir/parser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eemil/CLionProjects/alang/parser.cpp -o CMakeFiles/alang.dir/parser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eemil/projects/CLionProjects/alang/parser.cpp -o CMakeFiles/alang.dir/parser.cpp.s
 
 # Object files for target alang
 alang_OBJECTS = \
@@ -130,7 +130,7 @@ alang: CMakeFiles/alang.dir/helpers.cpp.o
 alang: CMakeFiles/alang.dir/parser.cpp.o
 alang: CMakeFiles/alang.dir/build.make
 alang: CMakeFiles/alang.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable alang"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eemil/projects/CLionProjects/alang/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable alang"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/alang.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -143,6 +143,6 @@ CMakeFiles/alang.dir/clean:
 .PHONY : CMakeFiles/alang.dir/clean
 
 CMakeFiles/alang.dir/depend:
-	cd /home/eemil/CLionProjects/alang/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eemil/CLionProjects/alang /home/eemil/CLionProjects/alang /home/eemil/CLionProjects/alang/cmake-build-debug /home/eemil/CLionProjects/alang/cmake-build-debug /home/eemil/CLionProjects/alang/cmake-build-debug/CMakeFiles/alang.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eemil/projects/CLionProjects/alang/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eemil/projects/CLionProjects/alang /home/eemil/projects/CLionProjects/alang /home/eemil/projects/CLionProjects/alang/cmake-build-debug /home/eemil/projects/CLionProjects/alang/cmake-build-debug /home/eemil/projects/CLionProjects/alang/cmake-build-debug/CMakeFiles/alang.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/alang.dir/depend
 
